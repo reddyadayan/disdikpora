@@ -97,7 +97,11 @@
                             <th id="th-kecamatan">Kecamatan</th>
                             <th id="th-kabupaten">Kabupaten/Kota</th>
                             {{-- <th>Nama Kepala Sekolah</th> --}}
-                            <th id="th-aksi">Aksi</th>
+                            @if (auth()->user()->role == 'admin')
+                                <th id="th-aksi">
+                                    Aksi
+                                </th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -113,16 +117,20 @@
                                 <td>{{ $item->kecamatan }}</td>
                                 <td>{{ $item->kabupaten_kota }}</td>
                                 {{-- <td>{{ $item->nama_kepala_sekolah }}</td> --}}
-                                <td>
-                                    <a href="{{ route('edit.show', $item->id) }}" class="btn btn-primary mb-3">Edit</a>
-                                    <form action="{{ route('edit.destroy', $item->id) }}" method="post" class="d-inline">
-                                        @csrf
-                                        @method('delete')
-                                        <button type="submit" class="btn btn-danger"
-                                            onclick="return confirm('Apakah Anda yakin ingin menghapus data?')">Hapus</button>
-                                    </form>
-                                </td>
+                                @if (auth()->user()->role == 'admin')
+                                    <td>
 
+                                        <a href="{{ route('edit.show', $item->id) }}" class="btn btn-primary mb-3">Edit</a>
+                                        <form action="{{ route('edit.destroy', $item->id) }}" method="post"
+                                            class="d-inline">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" class="btn btn-danger"
+                                                onclick="return confirm('Apakah Anda yakin ingin menghapus data?')">Hapus</button>
+                                        </form>
+
+                                    </td>
+                                @endif
                             </tr>
                         @endforeach
                     </tbody>

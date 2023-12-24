@@ -25,32 +25,20 @@
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
         <style>
-            @keyframes gradientMove {
-                0% {
-                    background-position: 0% 50%;
-                }
-
-                100% {
-                    background-position: 100% 50%;
-                }
-            }
-
             body {
                 display: flex;
                 flex-direction: column;
                 min-height: auto;
                 background: linear-gradient(to right, #04c9c4, #007bff);
                 background-size: 200% 100%;
-                animation: gradientMove 2s linear infinite;
             }
-
 
             .center-container {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                height: auto:
+                height: auto;
             }
 
             .logo {
@@ -60,22 +48,9 @@
 
             .glow-text {
                 background: linear-gradient(90deg, #00f, #0f0, #f00);
-
                 background-size: 200% 100%;
-
                 color: transparent;
-
                 background-clip: text;
-
-                animation: shine 2s linear infinite;
-
-            }
-
-            @keyframes shine {
-                to {
-                    background-position: 200% 0;
-
-                }
             }
         </style>
     </head>
@@ -88,10 +63,8 @@
                         <img src="img/logo.png" alt="Company Logo" class="logo img-fluid shadow mx-auto">
                     </div>
                     <div class="mb-4">
-                        <h2 class="glow-text mb-2">Welcome to Disdikpora Data Satuan</h2>
+                        <h2 class="glow-text mb-2">Portal Data Satuan Pendidikan Kabupaten Buleleng</h2>
                     </div>
-
-
                     @if (Route::has('login'))
                         <div class="mb-3">
                             @auth
@@ -103,15 +76,10 @@
                                 @endif
                             @endauth
                         </div>
-
                     @endif
                 </div>
             </div>
         </div>
-
-
-
-
     </body>
 
 </html>
