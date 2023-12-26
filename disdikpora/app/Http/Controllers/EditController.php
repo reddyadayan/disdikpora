@@ -26,7 +26,7 @@ class EditController extends Controller
             'alamat' => 'required',
             'desa' => 'required',
             'kecamatan' => 'required',
-            'kabupaten_kota' => 'required',
+
 
         ]);
 

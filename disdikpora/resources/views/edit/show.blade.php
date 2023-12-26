@@ -7,7 +7,7 @@
                 <h2 class="mb-0">Edit Data</h2>
             </div>
             <div class="card-body">
-                <form action="{{ route('edit.update', $dataUmum->id) }}" method="post">
+               <form action="{{ route('edit.update', $dataUmum->id) }}" method="post">
                     @csrf
                     @method('put')
 

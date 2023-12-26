@@ -119,7 +119,6 @@
                                 {{-- <td>{{ $item->nama_kepala_sekolah }}</td> --}}
                                 @if (auth()->user()->role == 'admin')
                                     <td>
-
                                         <a href="{{ route('edit.show', $item->id) }}" class="btn btn-primary mb-3">Edit</a>
                                         <form action="{{ route('edit.destroy', $item->id) }}" method="post"
                                             class="d-inline">
